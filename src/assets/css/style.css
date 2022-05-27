@@ -1,0 +1,7 @@
+.card {
+  cursor: pointer;
+  padding: 10px;
+  -webkit-box-shadow: 9px 10px 10px -1px rgba(0, 0, 0, 0.77);
+          box-shadow: 9px 10px 10px -1px rgba(0, 0, 0, 0.77);
+}
+/*# sourceMappingURL=style.css.map */
