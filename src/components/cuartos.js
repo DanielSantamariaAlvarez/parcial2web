@@ -13,9 +13,9 @@ function Cuartos (props) {
 
     // Hook de efecto para obtener la informacion del JSON que implementa PWA
     useEffect(() => {
-        const urlAPI = "https://gist.githubusercontent.com/josejbocanegra/92c90d5f2171739bd4a76d639f1271ea/raw/9effd124c825f7c2a7087d4a50fa4a91c5d34558/rooms.json";
+        const API = "https://gist.githubusercontent.com/josejbocanegra/92c90d5f2171739bd4a76d639f1271ea/raw/9effd124c825f7c2a7087d4a50fa4a91c5d34558/rooms.json";
         
-        fetch(urlAPI).then((res) => res.json()).then((data) => {
+        fetch(API).then((res) => res.json()).then((data) => {
             let cuartosEspacio = data.filter((d) => d.homeId === props.espacioSelecionado);
             setCuartos(cuartosEspacio);
         });
@@ -23,12 +23,10 @@ function Cuartos (props) {
         setCuartoSeleccionado();
     }, [props.espacioSelecionado]);
 
-    // Funcion que actualiza el estado de la variable caurtoSelec para determinar el cuarto escogido
     function manejadorCuartoSelec (cuarto) {
         setCuartoSeleccionado(cuarto);
     }
 
-    // Funcion que determina segun el cuarto que imagen mostrar
     function determinarImagenCuarto (cuarto) {
         if(cuarto === "Kitchen") {
             return cocina;

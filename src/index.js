@@ -13,7 +13,7 @@ import localeEnMessages from "./locales/en";
 let language = window.navigator.language || navigator.browserLanguage;
 
 // Definir el idioma de los mensajes a usar en la app i18n
-const selectMessages = language.startsWith('en') ? localeEnMessages : localeEsMessages;
+const selectMessages = language.startsWith('es-419') ? localeEsMessages : localeEnMessages;
 
 ReactDOM.render(
   <IntlProvider locale={language} messages={selectMessages}>

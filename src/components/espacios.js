@@ -9,8 +9,8 @@ function Espacios () {
     let [cuartos, setCuartos] = useState();
 
     useEffect(() => {
-        const urlAPI = "https://gist.githubusercontent.com/josejbocanegra/0067d2b28b009140fee423cfc84e40e6/raw/6e6b11160fbcacb56621b6422684d615dc3a0d33/spaces.json";
-        fetch(urlAPI).then((res) => res.json()).then((data) => {
+        const API = "https://gist.githubusercontent.com/josejbocanegra/0067d2b28b009140fee423cfc84e40e6/raw/6e6b11160fbcacb56621b6422684d615dc3a0d33/spaces.json";
+        fetch(API).then((res) => res.json()).then((data) => {
                 setEspacios(data);
             });
     }, [])
