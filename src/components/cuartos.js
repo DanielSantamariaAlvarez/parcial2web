@@ -10,6 +10,7 @@ function Cuartos (props) {
     // Variables de estado 
     let [cuartos, setCuartos] = useState([]);
     let [cuartoSeleccionado, setCuartoSeleccionado] = useState();
+    console.log("Entra")
 
     // Hook de efecto para obtener la informacion del JSON que implementa PWA
     useEffect(() => {
@@ -38,24 +39,24 @@ function Cuartos (props) {
     return(
         <div className="container mt-4 mb-5">
             <h2><FormattedMessage id="MyRooms"/></h2>
-            <div className="row mt-4">
-                <div className={cuartoSeleccionado != null ? "col-8": ""}>
+            <div className="row mt-4 justify-content-start">
+                <div className={cuartoSeleccionado != null ? "col-md-8": ""}>
                     <div className="row">
-                        {cuartos.map((c) => {
-                            return(
-                                <div className="col" key={c.name}>
-                                    <div className="card" onClick={() => manejadorCuartoSelec(c)}>
-                                        <div className="card-body">
-                                            <h5 className="card-title"><FormattedMessage id={c.name}/></h5>
-                                        </div>
-                                        <img src={determinarImagenCuarto(String(c.name))} className="card-img-top" alt={c.name} style={{height: "14rem"}}/>
+                    {cuartos.map((c) => {
+                        return(
+                                <div className="col-md-3">
+                                    <div className="card " onClick={() => manejadorCuartoSelec(c)}>
+                                    <div className="card-body">
+                                        <h5 className="card-title"><FormattedMessage id={c.name}/></h5>
                                     </div>
+                                    <img src={determinarImagenCuarto(String(c.name))} className="card-img-top" alt={c.name} style={{height: "14rem"}}/>
                                 </div>
-                            );
-                        })}
+                                </div>
+                        );
+                    })}
                     </div>
                 </div>
-                <div className={cuartoSeleccionado != null ? "col-4": ""}>
+                <div className={cuartoSeleccionado != null ? "col-md-4": ""}>
                     {cuartoSeleccionado != null ? <TablaDispositivos dispositivosCuarto={cuartoSeleccionado.devices} /> : null}
                 </div>
             </div>

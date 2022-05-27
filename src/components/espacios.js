@@ -26,7 +26,7 @@ function Espacios () {
                 {espacios.map((e) => {
                     return(
                         
-                        <div className="col-3 " key={e.id} style={{height: "150px"}}>
+                        <div className="col-3 " key={e.id}>
                             <div className="card justify-content-center" onClick={() => cuartoSeleccioando(e)} >
                                 <img src={String(e.name).startsWith("Casa")? Casa : Apto} className="card-img-top w-100" alt={e.name} />
                                 <div className="card-body">
@@ -38,7 +38,7 @@ function Espacios () {
                     );
                 })}
             </div>
-            {cuartos != null ? <Cuartos cuartosionado={cuartos.id} />: null}
+            {cuartos != null ? <Cuartos espacioSelecionado={cuartos.id} />: null}
         </div>
     );
 }
